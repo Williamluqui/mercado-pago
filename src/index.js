@@ -9,10 +9,13 @@ MercadoPago.configure({
     sandbox:true,
     access_token: TOKEN_TEST
 });
-app.set('port',3000);
+app.set('port', process.env.PORT || 3000);
+
+
 app.get('/', (req, res) => res.send('Hello World!'));
 
 app.get('/payment',async(req, res)=>{
+
     let id = "" + Date.now() // UUID forma mais recomendada
     let email = "william.luqui@me.com"
     const data = {
@@ -41,7 +44,6 @@ app.get('/payment',async(req, res)=>{
 });
 
 
-
-app.listen(port,(err)  => {
+app.listen(port ,(err)  => {
     console.log(`Server is running on port: ${port}!`); 
 });
