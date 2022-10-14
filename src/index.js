@@ -1,15 +1,15 @@
 require('dotenv').config();
 const express = require('express')
 const app = express()
-const port = 3000
 const MercadoPago = require("mercadopago")
 const {TOKEN_TEST} = process.env;
+const port = process.env.PORT || 8080;
 
 MercadoPago.configure({
     sandbox:true,
     access_token: TOKEN_TEST
 });
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT );
 
 
 app.get('/', (req, res) => res.send('Hello World!'));
