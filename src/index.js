@@ -43,6 +43,10 @@ app.get('/payment',async(req, res)=>{
 
 });
 
+app.post("/notify",(req, res)=>{
+    console.log(req.query)
+    res.send("ok")
+})
 
 app.listen(port ,(err)  => {
     console.log(`Server is running on port: ${port}!`); 
