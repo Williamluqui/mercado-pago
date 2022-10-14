@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express')
 const app = express()
-const port = 8080
+const port = 8080 || 3000
 const MercadoPago = require("mercadopago")
 const {TOKEN_TEST} = process.env;
 
@@ -42,4 +42,4 @@ app.get('/payment',async(req, res)=>{
 
 
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`app on!`))
