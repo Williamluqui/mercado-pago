@@ -9,7 +9,7 @@ MercadoPago.configure({
     sandbox:true,
     access_token: TOKEN_TEST
 });
-
+app.set('port',3000);
 app.get('/', (req, res) => res.send('Hello World!'));
 
 app.get('/payment',async(req, res)=>{
@@ -42,4 +42,6 @@ app.get('/payment',async(req, res)=>{
 
 
 
-app.listen(port, () => console.log(`app on!`))
+app.listen(port,(err)  => {
+    console.log(`Server is running on port: ${port}!`); 
+});
