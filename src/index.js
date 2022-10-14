@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express')
 const app = express()
-const port = 8080 || 3000
+const port = 3000
 const MercadoPago = require("mercadopago")
 const {TOKEN_TEST} = process.env;
 
