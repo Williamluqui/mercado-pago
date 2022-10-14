@@ -2,11 +2,12 @@ require('dotenv').config();
 const express = require('express')
 const app = express()
 const MercadoPago = require("mercadopago")
+const TOKEN_TEST = process.env.TOKEN_TEST;
 const port = process.env.PORT || 8080;
 
 MercadoPago.configure({
     sandbox:true,
-    access_token: process.env.TOKEN_TEST
+    access_token:TOKEN_TEST
 });
 app.set('port', process.env.PORT );
 
